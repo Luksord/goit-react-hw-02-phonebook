@@ -10,7 +10,7 @@ const appStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontSize: 40,
+  // fontSize: 40,
   color: '#010101',
 };
 
@@ -72,16 +72,18 @@ export class App extends Component {
   };
 
   render() {
-    <div style={{ appStyles }}>
-      <h1>Phonebook</h1>
-      <ContactForm addContact={this.addContact} />
-      <h2>Contacts</h2>
-      <Filter filter={this.state.filter} onChangeInput={this.onChangeInput} />
-      <ContactList
-        deleteContact={this.deleteContact}
-        contacts={this.filterContacts()}
-      />
-    </div>;
+    return (
+      <div style={{ appStyles }}>
+        {/* <h1>Phonebook</h1> */}
+        <ContactForm addContact={this.addContact} />
+        {/* <h2>Contacts</h2> */}
+        <Filter filter={this.state.filter} onChangeInput={this.onChangeInput} />
+        <ContactList
+          deleteContact={this.deleteContact}
+          contacts={this.filterContacts()}
+        />
+      </div>
+    );
   }
 }
 

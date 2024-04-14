@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './contacs.module.css';
+import css from '../ContactList/ContactList.module.css';
 
 // export const Contacts = ({ contacts, deleteContact }) => {
 // //   const handleDelete = id => {
@@ -41,7 +41,7 @@ export const ContactList = ({ contacts, children, deleteContact }) => {
     <div className={css.contacts}>
       <h2>Contacts</h2>
       {children}
-      <ul className={s.contacts__list}>
+      <ul className={css.contacts__list}>
         {contacts.map(({ id, name, number }) => (
           <li className={css.contacts_item} key={id}>
             <p className={css.contacts_name}>{name}</p>
