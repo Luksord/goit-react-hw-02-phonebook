@@ -6,12 +6,12 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 
 const appStyles = {
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  // fontSize: 40,
-  color: '#010101',
+  // height: '100vh',
+  // display: 'flex',
+  // justifyContent: 'start',
+  // alignItems: 'center',
+  // // fontSize: 40,
+  // color: '#010101',
 };
 
 export class App extends Component {
@@ -27,12 +27,6 @@ export class App extends Component {
     number: '',
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.addContact(this.state);
-    this.setState({ name: '', number: '' });
-  };
-
   onChangeInput = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
@@ -40,7 +34,8 @@ export class App extends Component {
 
   addContact = ({ name, number }) => {
     const exists = this.state.contacts.some(
-      value => value.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+      contact =>
+        contact.name.toLocaleLowerCase() === name.toLocaleLowerCase().trim()
     );
     if (exists) {
       alert(`${name} is already in contacts`);

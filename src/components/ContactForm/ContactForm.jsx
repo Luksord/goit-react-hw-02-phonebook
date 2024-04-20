@@ -9,6 +9,19 @@ export class ContactForm extends Component {
     number: '',
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    // const { name, number } = this.state;
+    // this.props.addContact({ name, number });
+    // this.setState({ name: '', number: '' });
+    const name = event.target.name.value;
+    const number = event.target.number.value;
+    const { addContact } = this.props;
+
+    addContact({ id: nanoid(), name, number });
+    event.target.reset();
+  };
+
   render() {
     return (
       <section className={css.form}>
