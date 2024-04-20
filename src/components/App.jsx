@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -69,9 +68,7 @@ export class App extends Component {
   render() {
     return (
       <div style={{ appStyles }}>
-        {/* <h1>Phonebook</h1> */}
         <ContactForm addContact={this.addContact} />
-        {/* <h2>Contacts</h2> */}
         <Filter filter={this.state.filter} onChangeInput={this.onChangeInput} />
         <ContactList
           deleteContact={this.deleteContact}
@@ -81,13 +78,3 @@ export class App extends Component {
     );
   }
 }
-
-// export const App = () => {
-//   return (
-//     <div
-//       style={{appStyles}}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };
