@@ -5,12 +5,12 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 
 const appStyles = {
-  // height: '100vh',
-  // display: 'flex',
-  // justifyContent: 'start',
-  // alignItems: 'center',
-  // // fontSize: 40,
-  // color: '#010101',
+  height: '100vh',
+  display: 'flex',
+  justifyContent: 'start',
+  alignItems: 'center',
+  // fontSize: 40,
+  color: '#010101',
 };
 
 export class App extends Component {
